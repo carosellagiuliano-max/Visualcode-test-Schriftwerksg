@@ -18,6 +18,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				heading: ['Playfair Display', 'serif'],
+				body: ['Lato', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -61,7 +65,11 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				'brand-beige': 'hsl(var(--brand-beige))',
+				'brand-white': 'hsl(var(--brand-white))',
+				'brand-black': 'hsl(var(--brand-black))',
+				'warm-grey': 'hsl(var(--warm-grey))',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
