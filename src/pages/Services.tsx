@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Scissors, Palette, Eye, Sparkles, Clock, Euro } from 'lucide-react';
+import Navigation from '@/components/ui/navigation';
 
 const Services = () => {
   const services = [
@@ -53,6 +54,7 @@ const Services = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Navigation />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-4">
