@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { MapPin, Clock, Star } from 'lucide-react';
+import { AppointmentBookingDialog } from '@/components/booking/appointment-booking-dialog';
 import heroImage from '@/assets/salon-hero.jpg';
 
 const Hero = () => {
@@ -62,13 +63,14 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
-            <Button 
-              size="lg"
-              className="bg-white text-black hover:bg-white/90 font-medium px-8 py-4 text-lg"
-              onClick={() => window.open('https://wa.me/41718019265?text=Hallo, ich möchte einen Termin vereinbaren.', '_blank')}
-            >
-              Termin buchen
-            </Button>
+            <AppointmentBookingDialog>
+              <Button 
+                size="lg"
+                className="bg-white text-black hover:bg-white/90 font-medium px-8 py-4 text-lg"
+              >
+                Termin buchen
+              </Button>
+            </AppointmentBookingDialog>
             <Button 
               variant="outline" 
               size="lg"
