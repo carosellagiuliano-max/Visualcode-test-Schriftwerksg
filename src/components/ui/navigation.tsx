@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, Instagram, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { AppointmentBookingDialog } from '@/components/booking/appointment-booking-dialog';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -57,13 +58,14 @@ const Navigation = () => {
             >
               <Phone className="h-5 w-5" />
             </a>
-            <Button 
-              size="sm" 
-              className="bg-primary text-primary-foreground hover:bg-primary/90"
-              onClick={() => window.open('https://wa.me/41718019265?text=Hallo, ich möchte einen Termin vereinbaren.', '_blank')}
-            >
-              Termin buchen
-            </Button>
+            <AppointmentBookingDialog>
+              <Button 
+                size="sm" 
+                className="bg-primary text-primary-foreground hover:bg-primary/90"
+              >
+                Termin buchen
+              </Button>
+            </AppointmentBookingDialog>
           </div>
 
           {/* Mobile menu button */}
@@ -109,15 +111,14 @@ const Navigation = () => {
                   <Phone className="h-5 w-5" />
                 </a>
               </div>
-              <Button 
-                className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
-                onClick={() => {
-                  window.open('https://wa.me/41718019265?text=Hallo, ich möchte einen Termin vereinbaren.', '_blank');
-                  setIsOpen(false);
-                }}
-              >
-                Termin buchen
-              </Button>
+              <AppointmentBookingDialog>
+                <Button 
+                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Termin buchen
+                </Button>
+              </AppointmentBookingDialog>
             </div>
           </div>
         </div>
