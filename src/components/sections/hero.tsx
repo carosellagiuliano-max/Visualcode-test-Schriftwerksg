@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { MapPin, Clock, Star } from 'lucide-react';
 import { AppointmentBookingDialog } from '@/components/booking/appointment-booking-dialog';
+import ProductsDialog from '@/components/booking/products-dialog';
 import { Link } from 'react-router-dom';
 import heroImage from '@/assets/salon-hero.jpg';
 
@@ -83,14 +84,15 @@ const Hero = () => {
                 Termin buchen
               </Button>
             </AppointmentBookingDialog>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="border-white text-white hover:bg-white hover:text-black font-medium px-8 py-4 text-lg"
-              onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              Leistungen ansehen
-            </Button>
+            <ProductsDialog>
+              <Button 
+                variant="outline" 
+                size="lg"
+                className="bg-white text-black hover:bg-white/90 border-white font-medium px-8 py-4 text-lg"
+              >
+                Produkte
+              </Button>
+            </ProductsDialog>
           </div>
         </div>
       </div>

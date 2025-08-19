@@ -107,7 +107,7 @@ const Services = () => {
           </div>
           
           <ProductsDialog>
-            <Button className="bg-primary text-black hover:bg-primary/90">
+            <Button className="bg-white text-black hover:bg-white/90 border border-gray-300">
               <ShoppingBag className="mr-2 h-5 w-5" />
               Produkte
             </Button>
