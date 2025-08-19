@@ -38,8 +38,7 @@ const timeSlots = [
 ];
 
 const hairdressers = [
-  { id: 'sarah', name: 'Sarah (Inhaberin)', specialty: 'Schnitt & Farbe' },
-  { id: 'anna', name: 'Anna (Stylistin)', specialty: 'Styling & Behandlung' }
+  { id: 'vanessa', name: 'Vanessa (Inhaberin)', specialty: 'Schnitt & Farbe' }
 ];
 
 const services = [

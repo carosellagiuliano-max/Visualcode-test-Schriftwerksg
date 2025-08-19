@@ -2,7 +2,11 @@ import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Award, Users, Clock, Heart } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import transformationImage from '@/assets/hair-transformation.jpg';
+import ProductsDialog from '@/components/booking/products-dialog';
+import HaircutsDialog from '@/components/booking/haircuts-dialog';
+import VanessaProfileDialog from '@/components/booking/vanessa-profile-dialog';
 
 const About = () => {
   const highlights = [
@@ -76,10 +80,26 @@ const About = () => {
             </div>
 
             <div className="flex flex-wrap gap-3">
-              <Badge className="bg-primary text-primary-foreground">Trinity Haircare Partner</Badge>
-              <Badge variant="outline">Damen & Herren</Badge>
-              <Badge variant="outline">Moderne Techniken</Badge>
-              <Badge variant="outline">Zentral gelegen</Badge>
+              <ProductsDialog>
+                <Badge className="bg-primary text-primary-foreground cursor-pointer hover:bg-primary/90 transition-colors">
+                  Trinity Haircare Partner
+                </Badge>
+              </ProductsDialog>
+              <HaircutsDialog>
+                <Badge variant="outline" className="cursor-pointer hover:bg-secondary transition-colors">
+                  Damen & Herren
+                </Badge>
+              </HaircutsDialog>
+              <VanessaProfileDialog>
+                <Badge variant="outline" className="cursor-pointer hover:bg-secondary transition-colors">
+                  Moderne Techniken
+                </Badge>
+              </VanessaProfileDialog>
+              <Link to="/contact">
+                <Badge variant="outline" className="cursor-pointer hover:bg-secondary transition-colors">
+                  Zentral gelegen
+                </Badge>
+              </Link>
             </div>
           </div>
 
