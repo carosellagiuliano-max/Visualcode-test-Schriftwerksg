@@ -1,8 +1,10 @@
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Scissors, Palette, Eye, Sparkles } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Scissors, Palette, Eye, Sparkles, ShoppingBag } from 'lucide-react';
 import servicesImage from '@/assets/salon-services.jpg';
+import ProductsDialog from '@/components/booking/products-dialog';
 
 const Services = () => {
   const services = [
@@ -98,11 +100,18 @@ const Services = () => {
           <p className="text-muted-foreground mb-6">
             Alle Preise verstehen sich als Richtpreise. Der finale Preis wird nach der persönlichen Beratung festgelegt.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
             <Badge variant="outline" className="text-sm">Trinity Haircare Premium Produkte</Badge>
             <Badge variant="outline" className="text-sm">Professionelle Beratung inklusive</Badge>
             <Badge variant="outline" className="text-sm">Moderne Techniken</Badge>
           </div>
+          
+          <ProductsDialog>
+            <Button className="bg-primary text-black hover:bg-primary/90">
+              <ShoppingBag className="mr-2 h-5 w-5" />
+              Produkte
+            </Button>
+          </ProductsDialog>
         </div>
       </div>
     </section>
