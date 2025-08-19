@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { MapPin, Clock, Star } from 'lucide-react';
 import { AppointmentBookingDialog } from '@/components/booking/appointment-booking-dialog';
+import { Link } from 'react-router-dom';
 import heroImage from '@/assets/salon-hero.jpg';
 
 const Hero = () => {
@@ -47,23 +48,29 @@ const Hero = () => {
               </p>
             </a>
             
-            <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
+            <Link 
+              to="/contact"
+              className="block bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 cursor-pointer transform hover:scale-105"
+            >
               <Clock className="h-8 w-8 text-white mb-3 mx-auto" />
               <h3 className="font-heading font-semibold text-lg mb-2">Öffnungszeiten</h3>
               <p className="text-white/80 text-sm">
                 Mo-Di, Do-Fr: 09:00-18:30<br />
                 Sa: 09:00-15:00
               </p>
-            </div>
+            </Link>
             
-            <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
+            <Link 
+              to="/services"
+              className="block bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 cursor-pointer transform hover:scale-105"
+            >
               <Star className="h-8 w-8 text-white mb-3 mx-auto" />
               <h3 className="font-heading font-semibold text-lg mb-2">Services</h3>
               <p className="text-white/80 text-sm">
                 Schnitte, Colorationen<br />
                 Balayage, Wimpern & Brauen
               </p>
-            </div>
+            </Link>
           </div>
 
           {/* CTA Buttons */}
