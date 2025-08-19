@@ -33,14 +33,19 @@ const Hero = () => {
 
           {/* Info Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-            <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
+            <a 
+              href="https://www.google.com/maps/search/?api=1&query=Rorschacherstrasse+152,+9000+St.+Gallen"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 cursor-pointer transform hover:scale-105"
+            >
               <MapPin className="h-8 w-8 text-white mb-3 mx-auto" />
               <h3 className="font-heading font-semibold text-lg mb-2">Standort</h3>
               <p className="text-white/80 text-sm">
                 Rorschacherstrasse 152<br />
                 9000 St. Gallen
               </p>
-            </div>
+            </a>
             
             <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
               <Clock className="h-8 w-8 text-white mb-3 mx-auto" />
