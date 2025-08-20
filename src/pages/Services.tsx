@@ -6,6 +6,7 @@ import { Scissors, Palette, Eye, Sparkles, Clock, Euro, MapPin, Calendar, Users 
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/ui/navigation';
 import HaircutsDialog from '@/components/booking/haircuts-dialog';
+import LocationDialog from '@/components/booking/location-dialog';
 
 const Services = () => {
   const womenServices = [
@@ -97,14 +98,12 @@ const Services = () => {
           
           {/* Quick Info Cards */}
           <div className="flex flex-wrap justify-center gap-4 mb-8">
-            <Button
-              variant="outline"
-              onClick={() => window.open('https://maps.google.com/?q=Bahnhofstrasse+16+9000+St.+Gallen', '_blank')}
-              className="flex items-center gap-2"
-            >
-              <MapPin className="h-4 w-4" />
-              Standort
-            </Button>
+            <LocationDialog>
+              <Button variant="outline" className="flex items-center gap-2">
+                <MapPin className="h-4 w-4" />
+                Standort
+              </Button>
+            </LocationDialog>
             <Link to="/contact">
               <Button variant="outline" className="flex items-center gap-2">
                 <Calendar className="h-4 w-4" />
