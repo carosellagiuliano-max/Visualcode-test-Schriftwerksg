@@ -84,6 +84,12 @@ const Hero = () => {
                 Termin buchen
               </Button>
             </AppointmentBookingDialog>
+            <Button 
+              size="lg"
+              className="bg-white text-black hover:bg-white/90 font-medium px-8 py-4 text-lg"
+            >
+              Login
+            </Button>
             <ProductsDialog>
               <Button 
                 variant="outline" 
