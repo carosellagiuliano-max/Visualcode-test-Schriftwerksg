@@ -226,12 +226,13 @@ export function AppointmentBookingDialog({ children }: AppointmentBookingDialogP
             {(() => {
               const hairdresser = hairdressers.find(h => h.id === selectedHairdresser);
               return hairdresser ? (
-                <div className="flex items-center justify-center">
+                <div className="flex flex-col items-center">
                   <img 
                     src={hairdresser.image} 
                     alt={hairdresser.name}
-                    className="w-20 h-20 rounded-full object-cover border-2 border-primary/20"
+                    className="w-20 h-20 rounded-full object-cover border-2 border-primary/20 mb-2"
                   />
+                  <p className="text-sm font-medium text-foreground">Inhaberin</p>
                 </div>
               ) : null;
             })()}
