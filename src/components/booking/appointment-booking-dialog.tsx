@@ -217,29 +217,35 @@ export function AppointmentBookingDialog({ children }: AppointmentBookingDialogP
               </SelectContent>
             </Select>
           </div>
+        </div>
 
-          {/* Selected Hairdresser Preview */}
-          {selectedHairdresser && (
-            <div className="p-3 bg-muted/50 rounded-lg border">
-              {(() => {
-                const hairdresser = hairdressers.find(h => h.id === selectedHairdresser);
-                return hairdresser ? (
-                  <div className="flex items-center gap-3">
-                    <img 
-                      src={hairdresser.image} 
-                      alt={hairdresser.name}
-                      className="w-10 h-10 rounded-full object-cover"
-                    />
-                    <div>
-                      <p className="font-medium text-sm text-foreground">{hairdresser.name}</p>
-                      <p className="text-xs text-primary">{hairdresser.specialty}</p>
-                    </div>
+        {/* Selected Hairdresser Details - Separate Section */}
+        {selectedHairdresser && (
+          <div className="mt-6 p-4 bg-accent/30 rounded-lg border-2 border-primary/20">
+            <h3 className="text-sm font-semibold text-primary mb-3">Gewählter Friseur/Stylist</h3>
+            {(() => {
+              const hairdresser = hairdressers.find(h => h.id === selectedHairdresser);
+              return hairdresser ? (
+                <div className="flex items-start gap-4">
+                  <img 
+                    src={hairdresser.image} 
+                    alt={hairdresser.name}
+                    className="w-16 h-16 rounded-full object-cover border-2 border-primary/20"
+                  />
+                  <div className="flex-1">
+                    <h4 className="font-medium text-foreground text-base">{hairdresser.name}</h4>
+                    <p className="text-sm text-primary font-medium mb-2">{hairdresser.specialty}</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {hairdresser.description}
+                    </p>
                   </div>
-                ) : null;
-              })()}
-            </div>
-          )}
+                </div>
+              ) : null;
+            })()}
+          </div>
+        )}
 
+        <div className="mt-6">
           <Button 
             onClick={handleBooking} 
             className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
