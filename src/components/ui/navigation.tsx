@@ -57,6 +57,12 @@ const Navigation = () => {
             >
               <Phone className="h-5 w-5" />
             </a>
+            <Button 
+              size="sm" 
+              className="bg-black text-white hover:bg-gray-800"
+            >
+              Login
+            </Button>
             <AppointmentBookingDialog>
               <Button 
                 size="sm" 
