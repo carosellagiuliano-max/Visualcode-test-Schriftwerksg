@@ -28,9 +28,9 @@ const Navigation = () => {
           <div className="flex-shrink-0">
             <Link to="/" className="flex flex-col items-center">
               <span className="text-2xl font-heading font-bold text-primary">
-                Schnittwerk
+                SCHNITTWERK
               </span>
-              <span className="text-xs font-heading text-foreground tracking-wide text-center">
+              <span className="text-[10px] font-heading text-foreground tracking-wide text-center">
                 BY VANESSA CAROSELLA
               </span>
             </Link>
