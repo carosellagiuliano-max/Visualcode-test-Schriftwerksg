@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 
 const FloatingCTA = () => {
   const handleBooking = () => {
-    window.open('https://wa.me/41718019265?text=Hallo, ich möchte einen Termin vereinbaren.', '_blank');
+    window.open('https://wa.me/41788508595?text=Hallo, ich möchte einen Termin vereinbaren.', '_blank');
   };
 
   return (

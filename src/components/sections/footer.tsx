@@ -42,10 +42,10 @@ const Footer = () => {
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
                 <a 
-                  href="tel:+41718019265" 
+                  href="tel:+41788508595" 
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-elegant"
                 >
-                  +41 71 801 92 65
+                  +41 78 850 85 95
                 </a>
               </div>
               <div className="flex items-center gap-2">
@@ -57,6 +57,17 @@ const Footer = () => {
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-elegant"
                 >
                   @schnittwerksg
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
+                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 002 2v10a2 2 0 002 2z" />
+                </svg>
+                <a 
+                  href="mailto:info@schnittwerksg.ch"
+                  className="text-primary-foreground/80 hover:text-primary-foreground transition-elegant"
+                >
+                  info@schnittwerksg.ch
                 </a>
               </div>
             </div>

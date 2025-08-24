@@ -76,7 +76,7 @@ export function AppointmentBookingDialog({ children }: AppointmentBookingDialogP
     // For now, show success message and open WhatsApp
     const message = `Hallo, ich möchte einen Termin buchen:\n\nDatum: ${bookingDetails.date}\nUhrzeit: ${bookingDetails.time}\nFriseur: ${bookingDetails.hairdresser}\nBehandlung: ${bookingDetails.service}`;
     
-    window.open(`https://wa.me/41718019265?text=${encodeURIComponent(message)}`, '_blank');
+    window.open(`https://wa.me/41788508595?text=${encodeURIComponent(message)}`, '_blank');
     
     toast({
       title: "Terminanfrage gesendet!",

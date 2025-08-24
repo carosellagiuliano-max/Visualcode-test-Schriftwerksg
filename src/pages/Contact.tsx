@@ -28,15 +28,15 @@ const Contact = () => {
     {
       icon: Phone,
       title: 'Telefon',
-      content: '+41 71 801 92 65',
-      action: () => window.location.href = 'tel:+41718019265',
+      content: '+41 78 850 85 95',
+      action: () => window.location.href = 'tel:+41788508595',
       buttonText: 'Anrufen'
     },
     {
       icon: MessageCircle,
       title: 'WhatsApp',
       content: 'Schnelle Terminvereinbarung',
-      action: () => window.open('https://wa.me/41718019265?text=Hallo, ich möchte einen Termin vereinbaren.', '_blank'),
+      action: () => window.open('https://wa.me/41788508595?text=Hallo, ich möchte einen Termin vereinbaren.', '_blank'),
       buttonText: 'WhatsApp öffnen'
     },
     {
@@ -45,6 +45,13 @@ const Contact = () => {
       content: '@schnittwerksg',
       action: () => window.open('https://www.instagram.com/schnittwerksg/', '_blank'),
       buttonText: 'Folgen'
+    },
+    {
+      icon: Mail,
+      title: 'E-Mail',
+      content: 'info@schnittwerksg.ch',
+      action: () => window.location.href = 'mailto:info@schnittwerksg.ch',
+      buttonText: 'E-Mail senden'
     }
   ];
 
@@ -167,7 +174,7 @@ const Contact = () => {
                   <Button 
                     size="lg"
                     className="bg-primary text-primary-foreground hover:bg-primary/90"
-                    onClick={() => window.open('https://wa.me/41718019265?text=Hallo, ich möchte einen Termin vereinbaren.', '_blank')}
+                    onClick={() => window.open('https://wa.me/41788508595?text=Hallo, ich möchte einen Termin vereinbaren.', '_blank')}
                   >
                     <MessageCircle className="h-5 w-5 mr-2" />
                     Jetzt Termin buchen

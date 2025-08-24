@@ -121,8 +121,8 @@ const About = () => {
                   <Phone className="h-5 w-5 text-primary" />
                   <div>
                     <p className="font-medium text-foreground">Telefon</p>
-                    <a href="tel:+41718019265" className="text-muted-foreground hover:text-primary transition-colors">
-                      +41 71 801 92 65
+                    <a href="tel:+41788508595" className="text-muted-foreground hover:text-primary transition-colors">
+                      +41 78 850 85 95
                     </a>
                   </div>
                 </div>
@@ -138,6 +138,19 @@ const About = () => {
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
                       @schnittwerksg
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="flex items-center gap-3">
+                  <Mail className="h-5 w-5 text-primary" />
+                  <div>
+                    <p className="font-medium text-foreground">E-Mail</p>
+                    <a 
+                      href="mailto:info@schnittwerksg.ch"
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      info@schnittwerksg.ch
                     </a>
                   </div>
                 </div>
@@ -179,7 +192,7 @@ const About = () => {
                 </p>
                 <Button 
                   className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
-                  onClick={() => window.open('https://wa.me/41718019265?text=Hallo, ich möchte einen Termin vereinbaren.', '_blank')}
+                  onClick={() => window.open('https://wa.me/41788508595?text=Hallo, ich möchte einen Termin vereinbaren.', '_blank')}
                 >
                   <Calendar className="h-4 w-4 mr-2" />
                   Jetzt Termin buchen

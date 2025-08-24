@@ -85,10 +85,10 @@ const Contact = () => {
                 <div className="flex items-center gap-3">
                   <Phone className="h-5 w-5 text-muted-foreground" />
                   <a 
-                    href="tel:+41718019265" 
+                    href="tel:+41788508595" 
                     className="text-foreground hover:text-primary transition-elegant"
                   >
-                    +41 71 801 92 65
+                    +41 78 850 85 95
                   </a>
                 </div>
                 <div className="flex items-center gap-3">
@@ -102,12 +102,23 @@ const Contact = () => {
                     @schnittwerksg
                   </a>
                 </div>
+                <div className="flex items-center gap-3">
+                  <svg className="h-5 w-5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <a 
+                    href="mailto:info@schnittwerksg.ch"
+                    className="text-foreground hover:text-primary transition-elegant"
+                  >
+                    info@schnittwerksg.ch
+                  </a>
+                </div>
               </div>
               
               <div className="space-y-2">
                 <Button 
                   className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
-                  onClick={() => window.open('https://wa.me/41718019265?text=Hallo, ich möchte einen Termin vereinbaren.', '_blank')}
+                  onClick={() => window.open('https://wa.me/41788508595?text=Hallo, ich möchte einen Termin vereinbaren.', '_blank')}
                 >
                   <MessageCircle className="h-4 w-4 mr-2" />
                   WhatsApp Termin
@@ -115,7 +126,7 @@ const Contact = () => {
                 <Button 
                   variant="outline" 
                   className="w-full"
-                  onClick={() => window.open('tel:+41718019265', '_self')}
+                  onClick={() => window.open('tel:+41788508595', '_self')}
                 >
                   <Phone className="h-4 w-4 mr-2" />
                   Anrufen

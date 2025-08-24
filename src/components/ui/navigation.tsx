@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Instagram, Phone } from 'lucide-react';
+import { Menu, X, Instagram, Phone, ShoppingCart, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { AppointmentBookingDialog } from '@/components/booking/appointment-booking-dialog';
 import LoginDialog from '@/components/auth/login-dialog';
+import ShopDialog from '@/components/booking/shop-dialog';
+import CartDialog from '@/components/booking/cart-dialog';
+import VanessaProfileDialog from '@/components/booking/vanessa-profile-dialog';
+import { useCart } from '@/contexts/cart-context';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { totalItems } = useCart();
 
   const navItems = [
-    { href: '/', label: 'Startseite' },
     { href: '/leistungen', label: 'Leistungen & Preise' },
     { href: '/galerie', label: 'Galerie' },
     { href: '/ueber-uns', label: 'Über uns' },
@@ -39,6 +43,16 @@ const Navigation = () => {
                   {item.label}
                 </Link>
               ))}
+              <VanessaProfileDialog>
+                <button className="text-foreground hover:text-primary transition-elegant text-sm font-medium">
+                  Team
+                </button>
+              </VanessaProfileDialog>
+              <ShopDialog>
+                <button className="text-foreground hover:text-primary transition-elegant text-sm font-medium">
+                  Shop
+                </button>
+              </ShopDialog>
             </div>
           </div>
 
@@ -53,11 +67,21 @@ const Navigation = () => {
               <Instagram className="h-5 w-5" />
             </a>
             <a
-              href="tel:+41718019265"
+              href="tel:+41788508595"
               className="text-muted-foreground hover:text-primary transition-elegant"
             >
               <Phone className="h-5 w-5" />
             </a>
+            <CartDialog>
+              <button className="relative text-muted-foreground hover:text-primary transition-elegant">
+                <ShoppingCart className="h-5 w-5" />
+                {totalItems > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                    {totalItems}
+                  </span>
+                )}
+              </button>
+            </CartDialog>
             <LoginDialog>
               <Button 
                 size="sm" 
@@ -102,6 +126,22 @@ const Navigation = () => {
                 {item.label}
               </Link>
             ))}
+            <VanessaProfileDialog>
+              <button 
+                className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-secondary transition-elegant rounded-md w-full text-left"
+                onClick={() => setIsOpen(false)}
+              >
+                Team
+              </button>
+            </VanessaProfileDialog>
+            <ShopDialog>
+              <button 
+                className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-secondary transition-elegant rounded-md w-full text-left"
+                onClick={() => setIsOpen(false)}
+              >
+                Shop
+              </button>
+            </ShopDialog>
             <div className="px-3 py-2 space-y-2">
               <div className="flex items-center space-x-4">
                 <a
@@ -113,11 +153,21 @@ const Navigation = () => {
                   <Instagram className="h-5 w-5" />
                 </a>
                 <a
-                  href="tel:+41718019265"
+                  href="tel:+41788508595"
                   className="text-muted-foreground hover:text-primary transition-elegant"
                 >
                   <Phone className="h-5 w-5" />
                 </a>
+                <CartDialog>
+                  <button className="relative text-muted-foreground hover:text-primary transition-elegant">
+                    <ShoppingCart className="h-5 w-5" />
+                    {totalItems > 0 && (
+                      <span className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                        {totalItems}
+                      </span>
+                    )}
+                  </button>
+                </CartDialog>
               </div>
               <AppointmentBookingDialog>
                 <Button 
