@@ -33,13 +33,6 @@ const Contact = () => {
       buttonText: 'Anrufen'
     },
     {
-      icon: MessageCircle,
-      title: 'WhatsApp',
-      content: 'Schnelle Terminvereinbarung',
-      action: () => window.open('https://wa.me/41788508595?text=Hallo, ich möchte einen Termin vereinbaren.', '_blank'),
-      buttonText: 'WhatsApp öffnen'
-    },
-    {
       icon: Instagram,
       title: 'Instagram',
       content: '@schnittwerksg',
@@ -161,27 +154,6 @@ const Contact = () => {
               </Card>
             ))}
             
-            {/* Terminbuchung Highlight */}
-            <Card className="border-primary bg-primary/5">
-              <CardContent className="pt-6">
-                <div className="text-center">
-                  <h3 className="text-xl font-heading font-bold text-primary mb-2">
-                    Schnelle Terminbuchung
-                  </h3>
-                  <p className="text-muted-foreground mb-4">
-                    Buchen Sie Ihren Termin ganz einfach per WhatsApp - wir antworten in der Regel innerhalb weniger Minuten.
-                  </p>
-                  <Button 
-                    size="lg"
-                    className="bg-primary text-primary-foreground hover:bg-primary/90"
-                    onClick={() => window.open('https://wa.me/41788508595?text=Hallo, ich möchte einen Termin vereinbaren.', '_blank')}
-                  >
-                    <MessageCircle className="h-5 w-5 mr-2" />
-                    Jetzt Termin buchen
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
           </div>
         </div>
 

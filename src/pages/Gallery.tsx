@@ -15,8 +15,9 @@ const Gallery = () => {
     {
       id: 1,
       image: gallery1,
-      title: 'Balayage Transformation',
-      category: 'balayage',
+      title: 'Balayage Transformation Frau',
+      category: 'haarschnitt-frauen',
+      gender: 'frauen',
       description: 'Natürliche Highlights für einen sun-kissed Look',
       before: 'Dunkelbraunes Haar',
       after: 'Warme Balayage Highlights'
@@ -25,7 +26,8 @@ const Gallery = () => {
       id: 2,
       image: gallery2,
       title: 'Ombré Coloration',
-      category: 'colorationen',
+      category: 'colors',
+      gender: 'frauen',
       description: 'Sanfter Farbverlauf von dunkel zu hell',
       before: 'Einfarbig braun',
       after: 'Ombré Blond-Braun'
@@ -34,7 +36,8 @@ const Gallery = () => {
       id: 3,
       image: gallery3,
       title: 'Moderner Herrenschnitt',
-      category: 'schnitte',
+      category: 'haarschnitt-maenner',
+      gender: 'maenner',
       description: 'Zeitgemäßer Cut mit perfektem Styling',
       before: 'Lange, ungepflegte Haare',
       after: 'Moderner, strukturierter Schnitt'
@@ -43,7 +46,8 @@ const Gallery = () => {
       id: 4,
       image: gallery1,
       title: 'Komplette Typveränderung',
-      category: 'colorationen',
+      category: 'colors',
+      gender: 'frauen',
       description: 'Von dunkel zu strahlendem Blond',
       before: 'Dunkelbraune Grundfarbe',
       after: 'Platinblonde Traumfarbe'
@@ -51,28 +55,50 @@ const Gallery = () => {
     {
       id: 5,
       image: gallery2,
-      title: 'Balayage Refresh',
-      category: 'balayage',
-      description: 'Auffrischung bestehender Highlights',
-      before: 'Verblasste Highlights',
-      after: 'Frische, leuchtende Akzente'
+      title: 'Eleganter Damenschnitt',
+      category: 'haarschnitt-frauen',
+      gender: 'frauen',
+      description: 'Moderner Bob mit perfekten Konturen',
+      before: 'Lange, schwere Haare',
+      after: 'Frischer, eleganter Bob'
     },
     {
       id: 6,
       image: gallery3,
-      title: 'Business Look',
-      category: 'schnitte',
+      title: 'Business Look Mann',
+      category: 'haarschnitt-maenner',
+      gender: 'maenner',
       description: 'Professioneller Herrenschnitt',
       before: 'Unordentliche Frisur',
       after: 'Gepflegter Business-Look'
+    },
+    {
+      id: 7,
+      image: gallery1,
+      title: 'Herren Color Transformation',
+      category: 'colors',
+      gender: 'maenner',
+      description: 'Natürliche Grauabdeckung mit modernen Akzenten',
+      before: 'Graue Ansätze',
+      after: 'Natürlich wirkende Farbe'
+    },
+    {
+      id: 8,
+      image: gallery2,
+      title: 'Undercut Styling',
+      category: 'haarschnitt-maenner',
+      gender: 'maenner',
+      description: 'Moderner Undercut mit Übergang',
+      before: 'Alte Frisur',
+      after: 'Stylischer Undercut'
     }
   ];
 
   const categories = [
     { id: 'alle', label: 'Alle Arbeiten' },
-    { id: 'schnitte', label: 'Haarschnitte' },
-    { id: 'colorationen', label: 'Colorationen' },
-    { id: 'balayage', label: 'Balayage' }
+    { id: 'haarschnitt-maenner', label: 'Haarschnitt Männer' },
+    { id: 'haarschnitt-frauen', label: 'Haarschnitt Frauen' },
+    { id: 'colors', label: 'Colors' }
   ];
 
   const filteredItems = selectedCategory === 'alle' 

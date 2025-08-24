@@ -16,6 +16,7 @@ import {
   Calendar
 } from 'lucide-react';
 import Navigation from '@/components/ui/navigation';
+import { AppointmentBookingDialog } from '@/components/booking/appointment-booking-dialog';
 import ownerImage from '@/assets/team-owner.jpg';
 import stylistImage from '@/assets/team-stylist.jpg';
 
@@ -29,22 +30,13 @@ const About = () => {
 
   const teamMembers = [
     {
-      name: 'Sarah Müller',
+      name: 'Vanessa Carosella',
       role: 'Inhaberin & Chefstylstin',
       image: ownerImage,
-      description: 'Mit über 15 Jahren Erfahrung in der Branche hat Sarah das Schnittwerk zu dem gemacht, was es heute ist. Ihre Leidenschaft für innovative Schnitte und Farbtrends macht sie zur ersten Anlaufstelle für anspruchsvolle Kunden.',
+      description: 'Mit über 15 Jahren Erfahrung in der Branche hat Vanessa das Schnittwerk zu dem gemacht, was es heute ist. Ihre Leidenschaft für innovative Schnitte und Farbtrends macht sie zur ersten Anlaufstelle für anspruchsvolle Kunden.',
       specialties: ['Balayage', 'Colorationen', 'Trend-Cuts', 'Beratung'],
-      instagram: '@sarah_schnittwerk',
+      instagram: '@vanessa_schnittwerk',
       awards: ['Swiss Hair Award 2023', 'Trinity Haircare Experte']
-    },
-    {
-      name: 'Marco Rossi',
-      role: 'Senior Stylist',
-      image: stylistImage,
-      description: 'Marco ist unser Experte für Herrenschnitte und moderne Stylings. Seine präzise Arbeitsweise und sein Gespür für aktuelle Trends machen ihn zu einem gefragten Stylisten.',
-      specialties: ['Herrenschnitte', 'Bartpflege', 'Styling', 'Klassische Schnitte'],
-      instagram: '@marco_cuts',
-      awards: ['Certified Trinity Professional']
     }
   ];
 
@@ -190,13 +182,12 @@ const About = () => {
                 <p className="text-sm text-muted-foreground mb-3">
                   Termine sind auch außerhalb der Öffnungszeiten nach Vereinbarung möglich.
                 </p>
-                <Button 
-                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
-                  onClick={() => window.open('https://wa.me/41788508595?text=Hallo, ich möchte einen Termin vereinbaren.', '_blank')}
-                >
-                  <Calendar className="h-4 w-4 mr-2" />
-                  Jetzt Termin buchen
-                </Button>
+                <AppointmentBookingDialog>
+                  <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+                    <Calendar className="h-4 w-4 mr-2" />
+                    Jetzt Termin buchen
+                  </Button>
+                </AppointmentBookingDialog>
               </div>
             </CardContent>
           </Card>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Dialog,
   DialogContent,
@@ -8,9 +8,10 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ShoppingBag, Plus } from 'lucide-react';
+import { ShoppingBag, Plus, Search } from 'lucide-react';
 import { useCart } from '@/contexts/cart-context';
 import { toast } from 'sonner';
 import { products } from '@/data/products';
@@ -21,6 +22,7 @@ interface ShopDialogProps {
 
 const ShopDialog = ({ children }: ShopDialogProps) => {
   const { addToCart } = useCart();
+  const [searchTerm, setSearchTerm] = useState('');
 
   const handleAddToCart = (product: any, category: string) => {
     addToCart({
@@ -31,6 +33,15 @@ const ShopDialog = ({ children }: ShopDialogProps) => {
     });
     toast.success(`${product.name} wurde zum Warenkorb hinzugefügt`);
   };
+
+  // Filter products based on search term
+  const filteredProducts = products.map(category => ({
+    ...category,
+    items: category.items.filter(product =>
+      product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      product.detailedDescription.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+  })).filter(category => category.items.length > 0);
 
   return (
     <Dialog>
@@ -48,6 +59,17 @@ const ShopDialog = ({ children }: ShopDialogProps) => {
           </DialogDescription>
         </DialogHeader>
         
+        {/* Search Field */}
+        <div className="relative">
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
+          <Input
+            placeholder="Produkte suchen..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="pl-10"
+          />
+        </div>
+        
         <div className="space-y-8 mt-6">
           {/* Trinity Haircare Produkte */}
           <div className="space-y-6">
@@ -55,7 +77,7 @@ const ShopDialog = ({ children }: ShopDialogProps) => {
               <h2 className="text-xl font-bold text-foreground mb-2">Trinity Haircare Premium Produkte</h2>
               <p className="text-muted-foreground text-sm">Professionelle Haarpflege für optimale Ergebnisse</p>
             </div>
-            {products.filter(category => category.category.includes('Trinity')).map((category, categoryIndex) => (
+            {filteredProducts.filter(category => category.category.includes('Trinity')).map((category, categoryIndex) => (
               <div key={categoryIndex}>
                 <h3 className="text-lg font-semibold text-foreground mb-4 border-b border-border pb-2">
                   {category.category}
@@ -113,7 +135,7 @@ const ShopDialog = ({ children }: ShopDialogProps) => {
               <h2 className="text-xl font-bold text-foreground mb-2">TAILOR's Grooming Produkte</h2>
               <p className="text-muted-foreground text-sm">Moderne Herrenpflege für den anspruchsvollen Mann</p>
             </div>
-            {products.filter(category => category.category.includes('TAILOR')).map((category, categoryIndex) => (
+            {filteredProducts.filter(category => category.category.includes('TAILOR')).map((category, categoryIndex) => (
               <div key={categoryIndex}>
                 <h3 className="text-lg font-semibold text-foreground mb-4 border-b border-border pb-2">
                   {category.category}
@@ -166,7 +188,7 @@ const ShopDialog = ({ children }: ShopDialogProps) => {
           </div>
 
           {/* Styling Produkte */}
-          {products.filter(category => category.category === 'Styling Produkte').map((category, categoryIndex) => (
+          {filteredProducts.filter(category => category.category === 'Styling Produkte').map((category, categoryIndex) => (
             <div key={categoryIndex} className="space-y-6">
               <div className="text-center">
                 <h2 className="text-xl font-bold text-foreground mb-2">{category.category}</h2>
