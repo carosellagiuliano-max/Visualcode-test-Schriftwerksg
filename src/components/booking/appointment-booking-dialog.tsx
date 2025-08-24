@@ -190,8 +190,21 @@ export function AppointmentBookingDialog({ children }: AppointmentBookingDialogP
             <label className="text-sm font-medium">Friseur/Stylist</label>
             <Select value={selectedHairdresser} onValueChange={setSelectedHairdresser}>
               <SelectTrigger>
-                <User className="mr-2 h-4 w-4" />
-                <SelectValue placeholder="Friseur wählen" />
+                <div className="flex items-center gap-2">
+                  <User className="h-4 w-4" />
+                  {selectedHairdresser ? (
+                    <div className="flex items-center gap-2">
+                      <img 
+                        src={hairdressers.find(h => h.id === selectedHairdresser)?.image} 
+                        alt={hairdressers.find(h => h.id === selectedHairdresser)?.name}
+                        className="w-6 h-6 rounded-full object-cover"
+                      />
+                      <span>{hairdressers.find(h => h.id === selectedHairdresser)?.name}</span>
+                    </div>
+                  ) : (
+                    <span className="text-muted-foreground">Friseur wählen</span>
+                  )}
+                </div>
               </SelectTrigger>
               <SelectContent>
                 {hairdressers.map((hairdresser) => (
