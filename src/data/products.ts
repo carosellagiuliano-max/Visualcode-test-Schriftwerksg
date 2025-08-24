@@ -110,5 +110,74 @@ export const products: ProductCategory[] = [
         image: hairOil
       }
     ]
+  },
+  {
+    category: 'TAILOR\'s Care Serie',
+    items: [
+      {
+        id: 'tailors-daily-shampoo',
+        name: 'Daily Shampoo',
+        description: 'Tägliche Reinigung für alle Haartypen',
+        detailedDescription: 'Das Daily Shampoo von TAILOR\'s reinigt das Haar sanft und gründlich. Die ausgewogene Formel eignet sich für die tägliche Anwendung und alle Haartypen.',
+        usage: 'Ins nasse Haar einmassieren, aufschäumen und gründlich ausspülen.',
+        price: 'CHF 26',
+        image: hydratingShampoo
+      },
+      {
+        id: 'tailors-conditioner',
+        name: 'Daily Conditioner',
+        description: 'Tägliche Pflege und Geschmeidigkeit',
+        detailedDescription: 'Der Daily Conditioner spendet dem Haar Feuchtigkeit und macht es kämmbar. Perfekt für die tägliche Pflege-Routine.',
+        usage: 'Nach dem Shampoo in die Längen einarbeiten, kurz einwirken lassen und ausspülen.',
+        price: 'CHF 24',
+        image: moisturizingConditioner
+      }
+    ]
+  },
+  {
+    category: 'TAILOR\'s Styling Serie',
+    items: [
+      {
+        id: 'tailors-pomade',
+        name: 'Classic Pomade',
+        description: 'Klassisches Styling mit starkem Halt',
+        detailedDescription: 'Die Classic Pomade bietet starken Halt für klassische Herrenfrisuren. Wasserlöslich und rückstandslos auswaschbar.',
+        usage: 'Kleine Menge in den Handflächen verreiben und ins handtuchtrockene Haar einarbeiten.',
+        price: 'CHF 28',
+        image: texturizingSpray
+      },
+      {
+        id: 'tailors-clay',
+        name: 'Matte Clay',
+        description: 'Mattes Finish mit flexiblem Halt',
+        detailedDescription: 'Die Matte Clay verleiht einen natürlichen, matten Look mit flexiblem Halt. Ideal für strukturierte Styles.',
+        usage: 'Ins trockene oder leicht feuchte Haar einarbeiten und nach Wunsch stylen.',
+        price: 'CHF 30',
+        image: hairOil
+      }
+    ]
+  },
+  {
+    category: 'TAILOR\'s Shaving Serie',
+    items: [
+      {
+        id: 'tailors-shaving-cream',
+        name: 'Shaving Cream',
+        description: 'Reichhaltige Rasiercreme für die perfekte Rasur',
+        detailedDescription: 'Die Shaving Cream sorgt für eine sanfte und gründliche Rasur. Die reichhaltige Formel schützt die Haut vor Irritationen.',
+        usage: 'Mit einem Rasierpinsel oder den Händen aufschäumen und auf die angefeuchtete Haut auftragen.',
+        price: 'CHF 22',
+        image: heatProtectionSpray
+      },
+      {
+        id: 'tailors-aftershave',
+        name: 'After Shave Balm',
+        description: 'Beruhigender Balsam nach der Rasur',
+        detailedDescription: 'Der After Shave Balm beruhigt die Haut nach der Rasur und spendet Feuchtigkeit. Ohne Alkohol, daher brennt er nicht.',
+        usage: 'Nach der Rasur auf die gereinigte Haut auftragen und sanft einmassieren.',
+        price: 'CHF 26',
+        image: repairConditioner
+      }
+    ]
   }
 ];
