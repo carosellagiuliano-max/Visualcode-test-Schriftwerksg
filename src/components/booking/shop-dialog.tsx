@@ -8,11 +8,12 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ShoppingBag, Plus } from 'lucide-react';
 import { useCart } from '@/contexts/cart-context';
 import { toast } from 'sonner';
+import { products } from '@/data/products';
 
 interface ShopDialogProps {
   children: React.ReactNode;
@@ -20,72 +21,6 @@ interface ShopDialogProps {
 
 const ShopDialog = ({ children }: ShopDialogProps) => {
   const { addToCart } = useCart();
-
-  const products = [
-    {
-      category: 'Trinity Haircare Shampoos',
-      items: [
-        {
-          id: 'hydrating-shampoo',
-          name: 'Hydrating Shampoo',
-          description: 'Intensive Feuchtigkeit für trockenes Haar',
-          price: 'CHF 28'
-        },
-        {
-          id: 'volume-shampoo',
-          name: 'Volume Shampoo',
-          description: 'Für mehr Volumen und Fülle',
-          price: 'CHF 28'
-        },
-        {
-          id: 'color-protect-shampoo',
-          name: 'Color Protect Shampoo',
-          description: 'Schutz für coloriertes Haar',
-          price: 'CHF 32'
-        }
-      ]
-    },
-    {
-      category: 'Trinity Haircare Conditioner',
-      items: [
-        {
-          id: 'repair-conditioner',
-          name: 'Repair Conditioner',
-          description: 'Intensive Reparatur für geschädigtes Haar',
-          price: 'CHF 30'
-        },
-        {
-          id: 'moisturizing-conditioner',
-          name: 'Moisturizing Conditioner',
-          description: 'Tiefenwirksame Pflege',
-          price: 'CHF 28'
-        }
-      ]
-    },
-    {
-      category: 'Styling Produkte',
-      items: [
-        {
-          id: 'heat-protection-spray',
-          name: 'Heat Protection Spray',
-          description: 'Schutz vor Hitze bis 230°C',
-          price: 'CHF 24'
-        },
-        {
-          id: 'texturizing-spray',
-          name: 'Texturizing Spray',
-          description: 'Für natürliche Textur und Halt',
-          price: 'CHF 26'
-        },
-        {
-          id: 'hair-oil',
-          name: 'Hair Oil',
-          description: 'Nährendes Öl für Glanz und Geschmeidigkeit',
-          price: 'CHF 35'
-        }
-      ]
-    }
-  ];
 
   const handleAddToCart = (product: any, category: string) => {
     addToCart({
@@ -119,31 +54,45 @@ const ShopDialog = ({ children }: ShopDialogProps) => {
               <h3 className="text-lg font-semibold text-foreground mb-4 border-b border-border pb-2">
                 {category.category}
               </h3>
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid gap-4">
                 {category.items.map((product, productIndex) => (
                   <Card key={productIndex} className="border-border">
-                    <CardHeader className="pb-3">
-                      <div className="flex justify-between items-start">
-                        <CardTitle className="text-base font-medium text-foreground">
-                          {product.name}
-                        </CardTitle>
-                        <Badge variant="secondary" className="text-sm">
-                          {product.price}
-                        </Badge>
+                    <CardContent className="p-4">
+                      <div className="flex gap-4">
+                        <div className="flex-shrink-0">
+                          <img 
+                            src={product.image} 
+                            alt={product.name}
+                            className="w-24 h-24 object-cover rounded-md border border-border"
+                          />
+                        </div>
+                        <div className="flex-1 min-w-0 space-y-3">
+                          <div className="flex justify-between items-start">
+                            <CardTitle className="text-base font-medium text-foreground">
+                              {product.name}
+                            </CardTitle>
+                            <Badge variant="secondary" className="text-sm ml-2 flex-shrink-0">
+                              {product.price}
+                            </Badge>
+                          </div>
+                          <div className="space-y-2">
+                            <CardDescription className="text-muted-foreground text-sm">
+                              {product.detailedDescription}
+                            </CardDescription>
+                            <div className="text-xs text-muted-foreground bg-muted/30 p-2 rounded">
+                              <strong>Anwendung:</strong> {product.usage}
+                            </div>
+                          </div>
+                          <Button
+                            onClick={() => handleAddToCart(product, category.category)}
+                            className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
+                            size="sm"
+                          >
+                            <Plus className="h-4 w-4 mr-2" />
+                            In den Warenkorb
+                          </Button>
+                        </div>
                       </div>
-                    </CardHeader>
-                    <CardContent className="pt-0">
-                      <p className="text-muted-foreground text-sm mb-3">
-                        {product.description}
-                      </p>
-                      <Button
-                        onClick={() => handleAddToCart(product, category.category)}
-                        className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
-                        size="sm"
-                      >
-                        <Plus className="h-4 w-4 mr-2" />
-                        In den Warenkorb
-                      </Button>
                     </CardContent>
                   </Card>
                 ))}
