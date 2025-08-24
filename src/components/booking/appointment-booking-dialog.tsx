@@ -232,7 +232,7 @@ export function AppointmentBookingDialog({ children }: AppointmentBookingDialogP
             onClick={handleBooking} 
             className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
           >
-            Termin anfragen
+            Termin buchen
           </Button>
         </div>
       </DialogContent>
