@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Menu, X, Instagram, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { AppointmentBookingDialog } from '@/components/booking/appointment-booking-dialog';
+import LoginDialog from '@/components/auth/login-dialog';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -57,12 +58,14 @@ const Navigation = () => {
             >
               <Phone className="h-5 w-5" />
             </a>
-            <Button 
-              size="sm" 
-              className="bg-black text-white hover:bg-gray-800"
-            >
-              Login
-            </Button>
+            <LoginDialog>
+              <Button 
+                size="sm" 
+                className="bg-black text-white hover:bg-gray-800"
+              >
+                Login
+              </Button>
+            </LoginDialog>
             <AppointmentBookingDialog>
               <Button 
                 size="sm" 
