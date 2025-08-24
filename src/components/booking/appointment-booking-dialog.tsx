@@ -193,53 +193,21 @@ export function AppointmentBookingDialog({ children }: AppointmentBookingDialogP
                 <User className="mr-2 h-4 w-4" />
                 <SelectValue placeholder="Friseur wählen" />
               </SelectTrigger>
-              <SelectContent className="w-[400px]">
+              <SelectContent>
                 {hairdressers.map((hairdresser) => (
-                  <SelectItem key={hairdresser.id} value={hairdresser.id} className="p-3">
-                    <div className="flex items-start gap-3 w-full">
-                      <img 
-                        src={hairdresser.image} 
-                        alt={hairdresser.name}
-                        className="w-12 h-12 rounded-full object-cover flex-shrink-0"
-                      />
-                      <div className="flex flex-col flex-1">
-                        <span className="font-medium text-foreground">{hairdresser.name}</span>
-                        <span className="text-xs text-primary font-medium mb-1">
-                          {hairdresser.specialty}
-                        </span>
-                        <span className="text-xs text-muted-foreground leading-relaxed">
-                          {hairdresser.description}
-                        </span>
-                      </div>
+                  <SelectItem key={hairdresser.id} value={hairdresser.id}>
+                    <div className="flex flex-col">
+                      <span>{hairdresser.name}</span>
+                      <span className="text-xs text-muted-foreground">
+                        {hairdresser.specialty}
+                      </span>
                     </div>
                   </SelectItem>
                 ))}
               </SelectContent>
             </Select>
           </div>
-        </div>
 
-        {/* Selected Hairdresser Details - Separate Section */}
-        {selectedHairdresser && (
-          <div className="mt-6 p-4 bg-accent/30 rounded-lg border-2 border-primary/20">
-            <h3 className="text-sm font-semibold text-primary mb-3">Gewählter Friseur/Stylist</h3>
-            {(() => {
-              const hairdresser = hairdressers.find(h => h.id === selectedHairdresser);
-              return hairdresser ? (
-                <div className="flex flex-col items-center">
-                  <img 
-                    src={hairdresser.image} 
-                    alt={hairdresser.name}
-                    className="w-20 h-20 rounded-full object-cover border-2 border-primary/20 mb-2"
-                  />
-                  <p className="text-sm font-medium text-foreground">Inhaberin</p>
-                </div>
-              ) : null;
-            })()}
-          </div>
-        )}
-
-        <div className="mt-6">
           <Button 
             onClick={handleBooking} 
             className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
