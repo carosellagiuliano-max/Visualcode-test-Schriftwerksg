@@ -26,11 +26,11 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link to="/" className="flex flex-col items-start">
+            <Link to="/" className="flex flex-col items-center">
               <span className="text-2xl font-heading font-bold text-primary">
                 Schnittwerk
               </span>
-              <span className="text-xs font-heading text-muted-foreground tracking-wide">
+              <span className="text-xs font-heading text-foreground tracking-wide text-center">
                 BY VANESSA CAROSELLA
               </span>
             </Link>
