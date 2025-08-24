@@ -62,7 +62,7 @@ const Hero = () => {
             </Link>
             
             <Link 
-              to="/services"
+              to="/leistungen"
               className="block bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 cursor-pointer transform hover:scale-105"
             >
               <Star className="h-8 w-8 text-white mb-3 mx-auto" />
