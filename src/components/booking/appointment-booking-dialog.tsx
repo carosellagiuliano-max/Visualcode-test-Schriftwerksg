@@ -209,11 +209,18 @@ export function AppointmentBookingDialog({ children }: AppointmentBookingDialogP
               <SelectContent>
                 {hairdressers.map((hairdresser) => (
                   <SelectItem key={hairdresser.id} value={hairdresser.id}>
-                    <div className="flex flex-col">
-                      <span>{hairdresser.name}</span>
-                      <span className="text-xs text-muted-foreground">
-                        {hairdresser.specialty}
-                      </span>
+                    <div className="flex items-center gap-2">
+                      <img 
+                        src={hairdresser.image} 
+                        alt={hairdresser.name}
+                        className="w-6 h-6 rounded-full object-cover"
+                      />
+                      <div className="flex flex-col">
+                        <span>{hairdresser.name}</span>
+                        <span className="text-xs text-muted-foreground">
+                          {hairdresser.specialty}
+                        </span>
+                      </div>
                     </div>
                   </SelectItem>
                 ))}
