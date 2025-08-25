@@ -1,73 +1,27 @@
-# Welcome to your Lovable project
+# schnittwerk-your-style — Deployment notes
 
-## Project info
+This repository contains a Vite + React frontend in `frontend/` and an Express + SQLite backend in `backend/`.
 
-**URL**: https://lovable.dev/projects/af61227d-37d6-4d60-be1b-2001fe1ba413
+Quick Netlify deploy (Frontend)
 
-## How can I edit this code?
+- Netlify can build and publish the frontend automatically. `netlify.toml` is included and publishes `frontend/dist`.
+- In Netlify site settings use:
+  - Build command: `npm --prefix frontend run build`
+  - Publish directory: `frontend/dist`
 
-There are several ways of editing your application.
+Or build locally and drag & drop the contents of `frontend/dist` into Netlify.
 
-**Use Lovable**
+Backend (VPS) — minimal
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/af61227d-37d6-4d60-be1b-2001fe1ba413) and start prompting.
+- Use PM2 or systemd to run the backend (example in `backend/README.md`). Ensure `backend/.env` is configured with real SMTP and `JWT_SECRET`.
 
-Changes made via Lovable will be committed automatically to this repo.
+Production checklist
 
-**Use your preferred IDE**
+- [ ] Set strong `JWT_SECRET` in `backend/.env`
+- [ ] Set real SMTP credentials
+- [ ] Change admin password immediately after migration
+- [ ] Secure `.env` (do not commit to Git)
+- [ ] Setup TLS on the backend (nginx + certbot) if exposing the backend directly
+- [ ] Regular DB backups for `backend/booking.sqlite`
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/af61227d-37d6-4d60-be1b-2001fe1ba413) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
